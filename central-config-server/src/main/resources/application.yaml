@@ -4,17 +4,19 @@ spring:
   profiles:
     #active: native
     active: git
-    cloud:
-      config:
-        server:
-          git:
-            uri: "https://github.com/olexiy/todorpg-infra.git"
-            default-label: develop
-            timeout: 5
-            clone-on-start: true
-            force-pull: true
-          #native:
-            #searchLocations: "classapth:/config"
+  cloud:
+    config:
+      server:
+        git:
+          uri: "https://github.com/olexiy/todorpg-infra.git"
+          default-label: develop
+          search-paths: "configuration"
+          timeout: 5
+          clone-on-start: true
+          force-pull: true
+        #native:
+          #searchLocations: "classapth:/config"
+
 
 server:
   port: 8071
